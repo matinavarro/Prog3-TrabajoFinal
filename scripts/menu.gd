@@ -7,7 +7,7 @@ func _ready():
 	
 func _process(delta):
 	if Global.music:
-		musicGame.stream_paused = false #uso esta propiedad para reanudar la musica donde quedo
+		musicGame.stream_paused = false #reanudar la musica
 	elif !Global.music:
 		musicGame.stream_paused = true
 
@@ -27,6 +27,7 @@ func _on_QuitButton_pressed():#salimos del juego
 		soundButton.play()
 	get_tree().quit()
 
+#boton desactiva y activa efectos
 func _on_music_pressed():
 	if Global.fx:
 		soundButton.play()
@@ -35,7 +36,8 @@ func _on_music_pressed():
 		$opciones/music.text = "on"
 	else:
 		$opciones/music.text = "off"
-
+		
+#boton desactiva y activa musica
 func _on_fx_pressed():
 	if Global.fx:
 		soundButton.play()
@@ -45,6 +47,7 @@ func _on_fx_pressed():
 	else:
 		$opciones/fx.text = "off"
 
+#boton vuelve al menu
 func _on_volver_pressed():
 	if Global.fx:
 		soundButton.play()
@@ -52,6 +55,7 @@ func _on_volver_pressed():
 	$Objetivo.visible = false
 	$VBoxContainer.visible = true
 
+#boton para ver los objetivos
 func _on_Obj_pressed():
 	if Global.fx:
 		soundButton.play()

@@ -1,4 +1,5 @@
 extends CanvasLayer
+#Menu de pausa y activacion de full Screen tomado de este video https://www.youtube.com/watch?v=WaotOuDNio8&t=3s
 
 func _ready():
 	set_visible(false)
@@ -18,7 +19,6 @@ func _on_ContinueButton_pressed():
 func set_visible(is_visible):
 	for node in get_children():
 		node.visible = is_visible
-
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
